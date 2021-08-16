@@ -114,7 +114,7 @@ for i = 1:ncell
         %If x' < 0
         if x(i) < d && (x(i)+x(j)) < d
             M1(i,j) = 2*pi*(a1*(d^2/2-r1^2/2)+a2/d*(d^3/3-r1^3/3) + a3/d^3*(d^5/5-r1^5/5));%Hard-sphere component for x' > 0
-            L1(i,j) = d*(d-r1) - B*(d^2-r1^2) + B^2/(3*d)*(d^3-r1^3); %Short-range Coulomb correction for x' > 0            
+            L1(i,j) = d*(d-r1) - B*(d^2-r1^2) + B^2/(3*d)*(d^3-r1^3); %Short-range Coulomb correction for x' > 0
             K1(i,j) = K1(i,j) + nA*(M1(i,j) + beta*e^2/(2*perm*d)*L1(i,j)); %Kernel describing Na-Na and Cl-Cl interaction
             K2(i,j) = K2(i,j) + nA*(M1(i,j) - beta*e^2/(2*perm*d)*L1(i,j)); %Kernel describing Na-Cl and Cl-Na interaction
             K3(i,j) = K3(i,j) + nA*(M1(i,j) - beta*e^2/(perm*d)*L1(i,j)); %Kernel describing Cl-Ca and Ca-Cl interaction
